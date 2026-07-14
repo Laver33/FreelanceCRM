@@ -6,5 +6,6 @@
 }
 
 @theme { 
-  --text-color-primary: #ce77e3;
+  --color-text-primary: #5F57FF;
+  --color-bg-primary: #5F57FF; 
 }

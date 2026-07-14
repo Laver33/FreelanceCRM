@@ -1,6 +1,3 @@
-// src/components/Tremor/AreaChart.tsx
-"use client"
-
 import React from "react"
 import {
   Area,
@@ -12,16 +9,14 @@ import {
   YAxis,
 } from "recharts"
 
-
 const availableChartColors = [
-  "var(--color-primary)",   
-  "var(--color-secondary)", 
+  "#3b82f6",   
+  "#ef4444",
   "#3b82f6", 
   "#f59e0b", 
   "#ef4444", 
   "#6366f1"
 ]
-
 
 const ChartTooltip = ({ active, payload, valueFormatter }: any) => {
   if (active && payload && payload.length) {
@@ -72,7 +67,8 @@ export const AreaChart = ({
   return (
     <div className={`w-full h-72 ${className}`}>
       <ResponsiveContainer width="100%" height="100%">
-        <RechartsAreaChart data={data} margin={{ left: -15, right: 5, top: 10, bottom: 0 }}>
+        {/* ИСПРАВЛЕНО: Изменили left с -15 на 0 и добавили правый отступ для баланса */}
+        <RechartsAreaChart data={data} margin={{ left: 0, right: 15, top: 10, bottom: 0 }}>
           <CartesianGrid 
             strokeDasharray="3 3" 
             vertical={false} 
@@ -89,6 +85,7 @@ export const AreaChart = ({
             tickLine={false}
             axisLine={false}
             tickFormatter={valueFormatter}
+            width={70}
             className="text-xs fill-gray-400 dark:fill-gray-600"
           />
           <Tooltip

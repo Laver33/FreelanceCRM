@@ -18,11 +18,8 @@ const DashboardPage = () => {
     const chartdata = [
         { name: "SolarCells", amount: 4890 },
         { name: "Glass", amount: 2103 },
-        { name: "JunctionBox", amount: 2050 },
         { name: "Содержание артура", amount: 1300 },
-        { name: "BackSheet", amount: 1100 },
-        { name: "Frame", amount: 700 },
-        { name: "Encapsulant", amount: 200 },
+        { name: "Encapsulant", amount: 1200 },
     ]
 
     // Тест данные график
@@ -35,17 +32,26 @@ const DashboardPage = () => {
         { date: "6", "Доход": 3800, "Расход": 2500 },
     ]
 
+    // Тест данные показатели
+    const seenData = [
+        {title: 'Макс доход', amount: 1},
+        {title: 'Макс расход', amount: 1},
+        {title: 'Общий расход', amount: 1},
+    ]
+
     return(
         <div className="p-5">
+
             <PageTitle title="Дашборд"/>
+
             <div className="w-full flex gap-5">
                 {testData.map(stats => (
                     <motion.div 
-                        className="grid w-1/5 md:col-auto gap-3 text-center shadow-[0_0_15px_5px_rgba(0,0,0,0.1)] duration-1000 py-7 rounded-lg"
+                        className="grid w-1/5 md:col-auto gap-3 text-center shadow-[0_0_15px_5px_rgba(0,0,0,0.1)] duration-1000 py-7 rounded-xl"
                         whileHover={{ scale: 1.03 }}
                     >
                         <h3 className="h-1/3">{stats.title}</h3>
-                        <p className="h-2/3 text-lg text-primary">{stats.data}</p>
+                        <p className="h-2/3 text-lg text-text-primary">{stats.data}</p>
                     </motion.div>
                 ))}
             </div>
@@ -54,11 +60,34 @@ const DashboardPage = () => {
             <div className="flex mt-5 gap-5 w-full">
 
                 {/* Показатели выручки */}
-                <div className="h-100 w-2/12 p-4 text-lg font-medium rounded shadow-[0_0_15px_5px_rgba(0,0,0,0.1)]"><p>Показатели</p></div>
+                <div className="w-2/12 p-5 bg-white rounded-xl shadow-[0_0_15px_5px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col gap-4">
+
+                    <p className="text-base font-semibold text-gray-900">
+                        Показатели
+                    </p>
+    
+                    <div className="flex flex-col gap-3 mt-7">
+                        {seenData.map((indicators) => (
+                            <motion.div
+                                key={indicators.title}
+                                className="border shadow-[0_0_15px_5px_rgba(0,0,0,0.05)] p-3 rounded-lg flex flex-col gap-1 text-left" 
+                            >
+                                <p className="text-xs font-medium text-text-primary truncate">
+                                    {indicators.title}
+                                </p>
+
+                                <p className="text-lg font-bold text-amber-950 tabular-nums">
+                                    {indicators.amount}
+                                </p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
 
                 {/* Графики выручки */}
-                <div className="h-100 w-7/12 p-4 text-lg font-medium rounded shadow-[0_0_15px_5px_rgba(0,0,0,0.1)]">
-                <p>Графики выручки</p>
+                <div className="h-100 w-7/12 p-4 text-lg font-medium rounded-xl shadow-[0_0_15px_5px_rgba(0,0,0,0.1)]">
+                <p className="mb-4">Финансовые графики</p>
                 
                 <AreaChart
                     data={yearlyRevenue}
@@ -71,7 +100,7 @@ const DashboardPage = () => {
                 </div>
 
                 {/* Диаграмма с распределениями */}
-                <div className="h-100 w-3/12 p-4 text-lg grid font-medium rounded shadow-[0_0_15px_5px_rgba(0,0,0,0.1)]">
+                <div className="h-100 w-3/12 p-4 text-lg grid font-medium rounded-xl shadow-[0_0_15px_5px_rgba(0,0,0,0.1)]">
                 <p>Диаграмма с распределениями</p>
                 
                 <DonutChart

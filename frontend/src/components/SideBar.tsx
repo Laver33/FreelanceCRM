@@ -5,6 +5,7 @@ import { AiOutlineFile } from "react-icons/ai";
 import { AiOutlineCreditCard } from "react-icons/ai";
 import { FaHandsHelping } from "react-icons/fa";
 import * as motion from "motion/react-client"
+import '../index.css'
 
 import { AiFillSetting } from "react-icons/ai";
 
@@ -48,15 +49,16 @@ const SideBar = () => {
       <div className="navBtns grid gap-2 mt-5 border-b pb-5">
         {navBtnContent.map((btn, index) => (
           <motion.div
+            className="group"
             key={index}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 1, scaleX: 1.07, scaleY: 0.97 }}
           >
             <Link 
-              className="py-3 px-7  items-center text-center rounded-2xl flex gap-5 mx-3 justify-start hover:bg-purple-400 hover:text-white font-medium duration-1000"
+              className="py-3 px-7  items-center text-center rounded-2xl flex gap-5 mx-3 justify-start hover:bg-bg-primary group-hover:text-white font-medium duration-1000"
               to={btn.nav}
             >
-              <span className="text-3xl">{btn.icon}</span>
+              <span className="text-3xl text-text-primary group-hover:text-white duration-1000">{btn.icon}</span>
               {btn.title}
             </Link>
           </motion.div>
@@ -67,13 +69,13 @@ const SideBar = () => {
       <motion.div 
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 1, scaleX: 1.07, scaleY: 0.97 }}
-        className="mt-5 grid"
+        className="mt-5 grid group"
       >
         <Link
-          className="hover:bg-purple-400 py-3 px-7 items-center flex text-center mx-3 gap-5 justify-start rounded-2xl hover:text-white font-medium duration-1000"
+          className="hover:bg-bg-primary py-3 px-7 items-center flex text-center mx-3 gap-5 justify-start rounded-2xl group-hover:text-white font-medium duration-1000"
           to={'/settings'}
         >
-          <span className="text-3xl"><AiFillSetting /></span>
+          <span className="text-3xl text-text-primary group-hover:text-white duration-1000"><AiFillSetting /></span>
             Настройки
         </Link>
       </motion.div>
@@ -86,7 +88,7 @@ const SideBar = () => {
           className="flex flex-col items-center" 
           whileHover={{ scale: 1.03 }}
         >
-          <FaHandsHelping className="text-6xl mb-4"/>
+          <FaHandsHelping className="text-7xl text-primary mb-4"/>
           <motion.button
             className="border px-6 py-3 rounded-lg hover:bg-black hover:text-white duration-1000 font-medium"
             whileHover={{ scaleX: 1.07, scaleY: 0.95 }}
