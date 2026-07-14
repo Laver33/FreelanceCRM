@@ -1,10 +1,11 @@
+import PageTitle from "../components/PageTitle";
 
 
 
 const SettingsPage = () => {
   return(
     <>
-        <p>Настройки</p>
+       <PageTitle title="Настройки"/>
     </>
   )
 }

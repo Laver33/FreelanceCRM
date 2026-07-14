@@ -1,3 +1,4 @@
+import PageTitle from "../components/PageTitle";
 
 
 
@@ -5,7 +6,7 @@
 const ProjectsPage = () => {
   return(
     <>
-        <p>Проекты</p>
+        <PageTitle title="Проекты"/>
     </>
   )
 }

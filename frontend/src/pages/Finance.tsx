@@ -1,9 +1,10 @@
+import PageTitle from "../components/PageTitle";
 
 
 const FinancePage = () => {
   return(
     <>
-        <p>Финансы</p>
+      <PageTitle title="Финансы"/>
     </>
   )
 }

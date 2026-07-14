@@ -33,10 +33,15 @@ const SideBar = () => {
 
     <div className="fixed inset-y-0 left-0 w-64 z-50 shadow-xl">
 
-      {/* Хедер сайдбара */}
-      <div className="user grid p-7">
-        <p>Имя</p>
-        <p>balance</p>
+      {/* Нейминг проекта */}
+      <div className="grid h-10 p-10 items-center">
+        <Link
+          className="text-3xl font-medium"
+          to={'/'}
+        >
+        
+        LAVcrm
+        </Link>
       </div>
 
       {/* Основные кнопки */}
@@ -65,7 +70,7 @@ const SideBar = () => {
         className="mt-5 grid"
       >
         <Link
-          className="hover:bg-green-300 py-3 px-7 items-center flex text-center mx-3 gap-5 justify-start rounded-2xl hover:text-white font-medium duration-1000"
+          className="hover:bg-purple-400 py-3 px-7 items-center flex text-center mx-3 gap-5 justify-start rounded-2xl hover:text-white font-medium duration-1000"
           to={'/settings'}
         >
           <span className="text-3xl"><AiFillSetting /></span>

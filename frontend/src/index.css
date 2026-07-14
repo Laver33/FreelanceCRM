@@ -2,9 +2,9 @@
 
 :root {
   --text: #6b6375;
-  --bg: #fff;
+  --bg: #ffffff;
 }
 
-/* @theme {
-  
-} */
+@theme { 
+  --text-color-primary: #ce77e3;
+}

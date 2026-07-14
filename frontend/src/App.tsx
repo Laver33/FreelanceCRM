@@ -18,7 +18,7 @@ const AppContent = () => {
       <Route path="/projects" element={<ProjectsPage />} />
       <Route path="/finans" element={<FinancePage />} />
 
-      <Route path="/setting" element={<SettingsPage />} />
+      <Route path="/settings" element={<SettingsPage />} />
 
       
     </Routes>

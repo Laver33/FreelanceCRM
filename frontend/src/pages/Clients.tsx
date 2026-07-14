@@ -1,12 +1,11 @@
+import PageTitle from "../components/PageTitle";
 
 
 
 const ClientsPage = () => {
   return(
     <>
-    
-    <p>Клиенты</p>
-
+      <PageTitle title="Клиенты"/>
     </>
   )
 }
